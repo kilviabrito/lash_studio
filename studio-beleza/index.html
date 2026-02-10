@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lash & SPA Pink | Estúdio de Beleza</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-pink: #ffafcc; /* Rosa Quartzo */
+            --dark-pink: #fb6f92;    /* Pink Vibrante */
+            --soft-pink: #ffe5ec;    /* Rosa Suave */
+            --dark: #4a4a4a;
+            --white: #fff;
+            --whatsapp: #25d366;
+        }
+
+        * { margin: 0;
+         padding: 0;
+          box-sizing: border-box;
+           font-family: 'Poppins',sans-serif; 
+
+           }
+        
+        body { background-color: var(--soft-pink);
+             color: var(--dark);
+              line-height: 1.6; 
+              scroll-behavior: smooth;
+             }
+
+        /* --- Navegação --- */
+        header { 
+            background: var(--white); 
+            padding: 1rem 5%; 
+            position: fixed; 
+            width: 100%; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 2px 10px rgba(251, 111, 146, 0.1); 
+             background: var(--soft-pink);
+        }
+        nav { display: flex;
+             justify-content: space-between;
+             align-items: center;
+             max-width: 1200px;
+             margin: 0 auto;
+            
+             }
+
+        .logo { font-family: 'Playfair Display', serif;
+             font-size: 1.6rem;
+             color: var(--dark-pink);
+             font-weight: bold; 
+        }
+        nav ul { display: flex;
+             list-style: none; 
+            
+        }
+
+        nav ul li { margin-left: 25px; 
+             
+        }
+
+        nav ul li a { text-decoration: none;
+             color: var(--dark);
+             font-weight: 500;
+             transition: 0.3s; 
+             
+        }
+        nav ul li a:hover { 
+             color: var(--dark-pink); 
+        }
+
+        /* --- Hero --- */
+        .hero {
+            background: url(https://media.istockphoto.com/id/2251302387/pt/foto/portrait-beautiful-young-woman-with-clean-fresh-skin.jpg?s=612x612&w=0&k=20&c=coanz74RGved2B2k97YGINnKZny_DDgcHz0eRllnDHk=);
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 20px;
+        }
+        .hero-content {
+             background: rgba(255, 255, 255, 0.1);
+             padding: 50px 30px; 
+             border-radius: 30px;
+             backdrop-filter: blur(5px);
+             -webkit-backdrop-filter: blur(5px);
+             border-radius: 20px;
+             max-width: 600px; 
+             margin: 0 20px;
+             color:var(--dark);
+             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            }
+        .hero-content h1 {
+             font-family: 'Playfair Display', serif; 
+             font-size: 3rem;
+              color:var(--dark-pink); 
+             margin-bottom: 10px; 
+             text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+            }
+            /*---REGRAS PARA CELULAR */
+            @media (max-width: 768px) {
+                hero{
+                    height: 80vh;
+                }
+            }
+            .hero-content p {
+                font-size: 1rem;
+                color: #fcfbfb;
+                padding: 10px;
+                border-radius: 10px;
+            }
+            .logo {
+                font-size: 1.2rem;
+            }
+
+        /* --- Seção de Cuidados (Grid) --- */
+        .container {
+             padding: 80px 10%;
+             max-width: 1200px;
+             margin: 0 auto;
+             text-align: center;
+             }
+        .section-title {
+             font-family: 'Playfair Display', serif; 
+             font-size: 2.5rem;
+             color: var(--dark-pink);
+             margin-bottom: 10px;
+             }
+        .sub-title { 
+             font-size: 1.8rem; 
+             color: var(--dark-pink);
+             margin: 40px 0 20px;
+             font-family: 'Playfair Display', serif;
+             border-bottom: 2px solid var(--primary-pink); 
+             display: inline-block;
+             }
+
+        .grid-servicos {
+             display: grid;
+             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+             gap: 30px;
+             }
+        .card-detalhado {
+             background: var(--white);
+             border-radius: 25px; 
+             overflow: hidden;
+             box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+             transition: 0.3s;
+             border: 1px solid var(--primary-pink);
+             display: flex;
+             flex-direction: column;
+             }
+        .card-detalhado:hover { 
+             transform: translateY(-5px);
+             box-shadow: 0 15px 30px rgba(251, 111, 146, 0.2); 
+            }
+        .card-detalhado img { 
+             width: 100%;
+             height: 220px;
+             object-fit: cover;
+         }
+        .card-body { 
+             padding: 25px;
+             text-align: left;
+             flex-grow: 1;
+         }
+        .card-body h3 { 
+             color: var(--dark-pink);
+             margin-bottom: 10px; 
+             font-size: 1.3rem; 
+         }
+        .card-body p { 
+             font-size: 0.9rem;
+             color: #666;
+              margin-bottom: 15px;
+         }
+        .valor {
+             font-weight: bold;
+             color: var(--dark-pink); 
+             background: var(--soft-pink);
+             padding: 6px 15px;
+             border-radius: 20px;
+             font-size: 0.9rem;
+         }
+
+        /* --- Agenda Box --- */
+        .agenda-box { 
+             max-width: 550px;
+             margin: 0 auto;
+             background: #fff;
+             padding: 40px;
+             border-radius: 30px;
+             box-shadow: 0 15px 40px rgba(251, 111, 146, 0.15); text-align: left;
+             border: 1px solid var(--primary-pink);
+         }
+        .form-group {
+             margin-bottom: 20px;
+         }
+        .form-group label {
+             display: block;
+             font-weight: 600; 
+             margin-bottom: 8px;
+             color: var(--dark-pink); 
+         }
+        select, input[type="date"]
+         {   width: 100%;
+             padding: 12px;
+             border-radius: 12px;
+             border: 1px solid var(--primary-pink); 
+             font-size: 1rem; 
+             color: var(--dark);
+             outline: none;
+         }
+        
+        .periodo-options { 
+            display: flex;
+             gap: 10px; 
+             margin-top: 10px; 
+        }
+        .btn-periodo {
+             flex: 1;
+             padding: 12px;
+             border: 2px solid var(--primary-pink);
+             background: white;
+             cursor: pointer;
+             border-radius: 12px; 
+             font-weight: 600; 
+             transition: 0.3s;
+             color: var(--dark-pink);
+         }
+        .btn-periodo.active { 
+             background: var(--dark-pink);
+             color: white;
+             border-color: var(--dark-pink);
+         }
+
+        /* --- Botões de Ação --- */
+        .btn-main {
+             background: var(--dark-pink);
+             color: white;
+             padding: 15px 40px;
+             text-decoration: none;
+             border-radius: 50px;
+             font-weight: 600; 
+             display: inline-block;
+             transition: 0.3s;
+             border: none; 
+             cursor: pointer;
+         }
+        .btn-main:hover {
+             background: #ff477e; 
+             transform: scale(1.05);
+         }
+        
+        .btn-whatsapp {
+             width: 100%;
+             background: var(--whatsapp); 
+             color: white;
+             border: none;
+             padding: 18px;
+             border-radius: 15px;
+             font-weight: bold; 
+             font-size: 1.1rem;
+             cursor: pointer;
+             margin-top: 20px;
+             display: flex; 
+             align-items: center;
+             justify-content: center;
+             gap: 10px; transition: 0.3s; 
+        }
+        .btn-whatsapp:hover { 
+             background: #1ebd59; 
+        }
+
+        .whatsapp-float { 
+             position: fixed; 
+             width: 65px; 
+             height: 65px; 
+             bottom: 30px; 
+             right: 30px; 
+             background-color: var(--whatsapp); 
+             color: #FFF; 
+             border-radius: 50%; 
+             display: flex; 
+             align-items: center; 
+             justify-content: center; 
+             font-size: 35px; 
+             box-shadow: 2px 5px 15px rgba(0,0,0,0.2); 
+             z-index: 1000; 
+             text-decoration: none;
+             transition: 0.3s; 
+        }
+        .whatsapp-float:hover { 
+             transform: scale(1.1);
+        }
+
+        footer { 
+             text-align: center;
+             padding: 40px;
+             background: var(--dark-pink); 
+             color: var(--white);
+             font-weight: 500; 
+             margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">LASH & SPA PINK</div>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#servicos">Cuidados</a></li>
+                <li><a href="#agendamento">Agenda</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Sua melhor versão</h1>
+            <p>Especialistas em realçar seu olhar e cuidar da sua pele.</p><br>
+            <a href="#agendamento" class="btn-main">MARCAR MEU HORÁRIO</a>
+        </div>
+    </section>
+
+    <section id="servicos" class="container">
+        <h2 class="section-title">Nossos Cuidados</h2>
+        <p>Escolha o procedimento ideal para você</p>
+
+        <h3 class="sub-title">Cílios</h3>
+        <div class="grid-servicos">
+            <div class="card-detalhado">
+                <img src="https://media.istockphoto.com/id/1346112272/pt/foto/permanent-makeup-of-eyelashes-tattooing.webp?a=1&b=1&s=612x612&w=0&k=20&c=cALot_MQ98M8z3sBdXxr0k3XJYvnTCZ7Qh6lW1zeQN8=" alt="Cílios Fio a Fio">
+                <div class="card-body">
+                    <h3>Fio a Fio Clássico</h3>
+                    <p>Naturalidade e elegância para o dia a dia. Um fio colado em cada cílio natural.</p>
+                    <span class="valor">R$ 120,00</span>
+                </div>
+            </div>
+            <div class="card-detalhado">
+                <img src="https://media.istockphoto.com/id/1060980638/pt/foto/eyelash-extension-procedure-woman-eye-with-long-eyelashes-close-up-selective-focus-fashion.jpg?s=612x612&w=0&k=20&c=KLis5vhZh0_4UXPGwduo5_5cKqu4flREGZWd-iL8O-Y=" alt="Volume Russo">
+                <div class="card-body">
+                    <h3>Volume Russo</h3>
+                    <p>Para quem ama um olhar marcante, dramático e com muito preenchimento.</p>
+                    <span class="valor">R$ 180,00</span>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="sub-title">SPA Facial</h3>
+        <div class="grid-servicos">
+            <div class="card-detalhado">
+                <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3BhJTIwZmFjaWFsfGVufDB8fDB8fHww" alt="Limpeza de Pele">
+                <div class="card-body">
+                    <h3>Limpeza Profunda</h3>
+                    <p>Desintoxicação, extração de cravos e máscara de nutrição facial.</p>
+                    <span class="valor">R$ 150,00</span>
+                </div>
+            </div>
+            <div class="card-detalhado">
+                <img src="https://plus.unsplash.com/premium_photo-1661274109570-5d14d6f4aa68?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3BhJTIwZmFjaWFsfGVufDB8fDB8fHww" alt="Massagem Facial">
+                <div class="card-body">
+                    <h3>Massagem Relaxante</h3>
+                    <p>Alivia a tensão muscular facial e promove drenagem linfática.</p>
+                    <span class="valor">R$ 90,00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="agendamento" class="container" style="background: var(--white); border-radius: 50px 50px 0 0;">
+        <h2 class="section-title">Reserve seu Momento</h2>
+        <p style="margin-bottom: 30px;">Preencha abaixo e termine o agendamento no nosso WhatsApp.</p>
+        
+        <div class="agenda-box">
+            <div class="form-group">
+                <label><i class="fas fa-heart"></i> Serviço Escolhido:</label>
+                <select id="servico-select">
+                    <option value="Fio a Fio Clássico">Fio a Fio Clássico</option>
+                    <option value="Volume Russo">Volume Russo</option>
+                    <option value="Lash Lifting">Lash Lifting</option>
+                    <option value="Limpeza de Pele Profunda">Limpeza de Pele</option>
+                    <option value="Massagem Facial SPA">Massagem Facial</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label><i class="far fa-calendar-alt"></i> Para quando?</label>
+                <input type="date" id="data-select">
+            </div>
+
+            <div class="form-group">
+                <label><i class="far fa-clock"></i> Melhor Período:</label>
+                <div class="periodo-options">
+                    <button class="btn-periodo" onclick="setPeriodo('Manhã', this)">Manhã</button>
+                    <button class="btn-periodo" onclick="setPeriodo('Tarde', this)">Tarde</button>
+                    <button class="btn-periodo" onclick="setPeriodo('Noite', this)">Noite</button>
+                </div>
+            </div>
+
+            <button class="btn-whatsapp" onclick="enviarAgendamento()">
+                <i class="fab fa-whatsapp"></i> VERIFICAR DISPONIBILIDADE
+            </button>
+        </div>
+    </section>
+
+    <a href="https://wa.me/5588997816898" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer>
+        <p>&copy; 2024 Lash & SPA Pink Studio. <br> Desenvolvido com carinho.</p>
+    </footer>
+
+    <script>
+        let periodoEscolhido = "";
+
+        function setPeriodo(p, el) {
+            periodoEscolhido = p;
+            document.querySelectorAll('.btn-periodo').forEach(b => b.classList.remove('active'));
+            el.classList.add('active');
+        }
+
+        function enviarAgendamento() {
+            const numero = "5588997816898"; // SUBSTITUA PELO SEU NÚMERO
+            const serv = document.getElementById('servico-select').value;
+            const dataRaw = document.getElementById('data-select').value;
+
+            if(!dataRaw || !periodoEscolhido) {
+                alert("Por favor, escolha o dia e o período desejado!");
+                return;
+            }
+
+            const dataFormatada = dataRaw.split('-').reverse().join('/');
+            const mensagem =` Olá! Vi o site e gostaria de agendar:\n\n🌸 *Serviço:* ${serv}\n📅 *Data:* ${dataFormatada}\n⏰ *Turno:* ${periodoEscolhido}\n\nEstá disponível?`;
+
+            window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`, '_blank');
+        }
+
+        // Bloquear datas passadas no calendário
+        document.getElementById('data-select').min = new Date().toISOString().split("T")[0];
+    </script>
+</body>
+</html>
